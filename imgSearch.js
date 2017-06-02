@@ -19,9 +19,7 @@ if (isLocal)
   dbUrl = "mongodb://localhost:27017/mydb";
 else
   dbUrl = "mongodb://" + process.env.DB_USR + ":" + process.env.DB_PWD +
-            "@ds153521.mlab.com:53521/ksj-fccbe-imgsearch";
-
-// start the server
+            "@ds161041.mlab.com:61041/ksj-fccbe-imgsearch";
 
 var app = express();
 app.use('/',express.static('public'));
