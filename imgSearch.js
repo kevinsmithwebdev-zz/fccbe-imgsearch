@@ -59,9 +59,24 @@ mongo.connect(dbUrl, function(err, db) {
   //********************/// blank call for usage info
   app.get('/', function(req, res) {
     var addressStem = req.protocol + '://' +req.get('host') + "/";
+
     var str =
           "<h1>Kevin's <i>Image Search Abstraction Layer</i></h1>" +
-          "<h3>usage info</h3>";
+          "<h4>Made for <a href=\"https://www.freecodecamp.com\">" +
+           "Free Code Camp</a>'s Back End Development Course</h4>" +
+          "<h4>Made by Kevin Smith (ksjazzguitar)</h4>" +
+          "<hr>" +
+          "<h2>Example usage:</h2>" +
+          "<h3><i>Search for images:</i></h3>" +
+          "<h4 style=\"color:#c00;\"><code>" + addressStem +
+           "search?q=barcelona</code></h4>" +
+          "<h3>or with an offset:</h3>" +
+          "<h4 style=\"color:#c00;\"><code>" + addressStem +
+           "search?q=barcelona&offset=10</code></h4>" +
+          "<h3>or see the latest searches:</h3>" +
+          "<h4 style=\"color:#c00;\"><code>" + addressStem +
+           "latest</code></h4>" +
+          "<hr>";
     res.send(str);
   }); // app.get
 
